@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\91799\eclipse-workspace\7Rmart\Parameter.xml</span>
+                    <span>C:\Users\91799\git\7Rmart_Repo\7Rmart\Parameter.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testScript.LoginTest" class="method navigator-link" hash-for-method="verifyTheUserIsAbleToLoginWithIncorrectPassword">verifyTheUserIsAbleToLoginWithIncorrectPassword</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testScript.LoginTest" class="method navigator-link" hash-for-method="verifyTheUserIsAbleToLoginWithIncorrectPassword(admin, hello)">verifyTheUserIsAbleToLoginWithIncorrectPassword(admin, hello)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,31 +118,32 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">testScript.LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyTheUserIsAbleToLoginWithIncorrectPassword">
-                  </a> <!-- verifyTheUserIsAbleToLoginWithIncorrectPassword -->
+                  <a name="verifyTheUserIsAbleToLoginWithIncorrectPassword(admin, hello)">
+                  </a> <!-- verifyTheUserIsAbleToLoginWithIncorrectPassword(admin, hello) -->
                   <span class="method-name">verifyTheUserIsAbleToLoginWithIncorrectPassword</span>
+                  <span class="parameters">(admin,hello)</span>
                   <div class="stack-trace">org.testng.TestNGException: 
-Parameter &apos;username&apos; is required by @Test on method verifyTheUserIsAbleToLoginWithIncorrectPassword but has not been marked @Optional or defined
-in C:\Users\91799\eclipse-workspace\7Rmart\Parameter.xml
+Parameter &apos;browser&apos; is required by BeforeMethod on method initializeBrowser but has not been marked @Optional or defined
+in C:\Users\91799\git\7Rmart_Repo\7Rmart\Parameter.xml
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 26 stack frames
+... Removed 28 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-skipped -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\91799\eclipse-workspace\7Rmart\Parameter.xml</span>
+            <span class="header-content">C:\Users\91799\git\7Rmart_Repo\7Rmart\Parameter.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -150,6 +151,7 @@ in C:\Users\91799\eclipse-workspace\7Rmart\Parameter.xml
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;parameter name=&quot;password&quot; value=&quot;hello&quot;/&gt;
+  &lt;parameter name=&quot;username&quot; value=&quot;admin&quot;/&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;parameter&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testScript.LoginTest&quot;&gt;
@@ -226,11 +228,11 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">testScript.LoginTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyTheUserIsAbleToLoginWithIncorrectUsernameAndPassword</span>
-                <br/>
                 <span class="ignored-method-name">verifyTheUserIsAbleToLoginIncorrectUsername</span>
                 <br/>
                 <span class="ignored-method-name">verifyTheUserIsAbleToLoginUsingValidCredentials</span>
+                <br/>
+                <span class="ignored-method-name">verifyTheUserIsAbleToLoginWithIncorrectUsernameAndPassword</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -241,6 +243,12 @@ return data;
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">testScript.LoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">browserQuit([TestResult name=verifyTheUserIsAbleToLoginWithIncorrectPassword status=SKIP method=LoginTest.verify...)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

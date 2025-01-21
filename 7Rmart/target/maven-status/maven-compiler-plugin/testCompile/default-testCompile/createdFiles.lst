@@ -1,3 +1,11 @@
+testScript\SubCategoryTest.class
+testScript\ManageContactText.class
+testScript\LoginTest.class
+testScript\ManageProductTest.class
 generateReport\Listerners.class
 testScript\Base.class
-testScript\LoginTest.class
+testScript\ManageFooterTextTest.class
+testScript\HomeTest.class
+testScript\ManageNewsTest.class
+retry\Retry.class
+testScript\AdminUsersTest.class
