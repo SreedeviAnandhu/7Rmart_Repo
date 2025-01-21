@@ -41,13 +41,13 @@ public class LoginTest extends Base{
 	}
 
 	@Test
-	@Parameters({ "username", "password" })
-	public void verifyTheUserIsAbleToLoginWithIncorrectPassword(String username, String password) {
+//	@Parameters({ "username", "password" })
+	public void verifyTheUserIsAbleToLoginWithIncorrectPassword(/*String username, String password*/) throws IOException {
 		// String username = "admin";
 		// String password = "hello";
 
-		// String username = ExcelUtilities.readStringData(2, 0, "LoginPage");
-		// String password = ExcelUtilities.readStringData(2, 1, "LoginPage");
+		 String username = ExcelUtility.readStringData(2, 0, "LoginPage");
+		 String password = ExcelUtility.readStringData(2, 1, "LoginPage");
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username);
