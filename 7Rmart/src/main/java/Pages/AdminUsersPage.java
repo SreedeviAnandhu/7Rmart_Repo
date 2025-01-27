@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class AdminUsersPage {
 	
@@ -17,8 +18,6 @@ public class AdminUsersPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@class='small-box-footer']")
-	private WebElement adminuserclick;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newclick;
 	@FindBy(xpath = "//input[@id='username']")
@@ -37,35 +36,40 @@ public class AdminUsersPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement isalertdisplayeed;
 
-	public void adminUserClick() {
 
-		adminuserclick.click();
-	}
-
-	public void newClick() {
+	public AdminUsersPage newClick() {
 
 		newclick.click();
+		return this;
 	}
 
-	public void userNameClick(String usernamevalue) {
+	public AdminUsersPage userNameClick(String usernamevalue) {
 
 		usernameclick.sendKeys(usernamevalue);
+		return this;
 	}
 
-	public void passWordClick(String passwordvalue) {
+	public AdminUsersPage passWordClick(String passwordvalue) {
 
 		passwordclick.sendKeys(passwordvalue);
+		return this;
 	}
 
-	public void selectClick() {
-
+	public AdminUsersPage selectClick() {
+		
+		WaitUtility wait = new WaitUtility();
+		wait.waitForElementToBeClickable(driver, selectclick);
+		
 		PageUtility page = new PageUtility();
 		page.selectByVisibleText(selectclick, "Admin");
+		return this;
+		
 	}
 
-	public void saveClick() {
+	public AdminUsersPage saveClick() {
 
 		saveclick.click();
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {
@@ -74,9 +78,10 @@ public class AdminUsersPage {
 		return value;
 	}
 
-	public void deleteClick() {
+	public AdminUsersPage deleteClick() {
 		deleteclick.click();
 		driver.switchTo().alert().accept();
+		return this;
 	}
 
 	public boolean isAlertDisplayeed() {

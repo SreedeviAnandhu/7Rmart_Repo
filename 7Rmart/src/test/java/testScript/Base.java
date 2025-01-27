@@ -16,27 +16,29 @@ import org.testng.annotations.Parameters;
 
 import constants.Constants;
 import utilities.ScreenShotUtility;
+import utilities.WaitUtility;
 
 public class Base {
 	
 	public WebDriver driver;
 	public ScreenShotUtility scrshot;
 	public Properties properties;
+	public FileInputStream file;
 
 	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
 	public void initializeBrowser(String browser) throws Exception {
 		
-	/*	try {
-			Properties properties = new Properties();
-			FileInputStream file = new FileInputStream(Constants.CONFIGFILE);
+		try {
+			 properties = new Properties();
+			 file = new FileInputStream(Constants.CONFIGFILE);
 			properties.load(file);
 		}
 		catch(Exception e){
 			System.out.println("file not found");
 		}
 
-	*/	
+		
 		if (browser.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("edge")) {
@@ -48,9 +50,9 @@ public class Base {
 		}
 
 //	driver = new ChromeDriver();
-	//	driver.get(properties.getProperty("url")); // to launch a site get method is used
-		driver.get("https://groceryapp.uniqassosiates.com/admin");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get(properties.getProperty("url")); // to launch a site get method is used
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
 		driver.manage().window().maximize(); // window maximize chyan
 	}
 

@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import Pages.HomePage;
 import Pages.LoginPage;
+import constants.Constants;
 import utilities.ExcelUtility;
 
 public class HomeTest extends Base{
@@ -26,7 +27,7 @@ public class HomeTest extends Base{
 		home.logoutClick();
 
 		boolean value = home.isHomePageDisplayed();
-		Assert.assertTrue(value, "Alert is not displayed");
+		Assert.assertTrue(value, Constants.HOMETESTALERT);
 
 	}
 

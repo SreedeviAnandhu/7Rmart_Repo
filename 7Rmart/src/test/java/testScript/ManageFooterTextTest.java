@@ -5,11 +5,16 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.ManageFooterTextPage;
+import constants.Constants;
 import utilities.ExcelUtility;
 
 public class ManageFooterTextTest extends Base {
+	
+	HomePage homepage;
+	ManageFooterTextPage managefootertextpage;
 	
 	@Test(retryAnalyzer = retry.Retry.class, description = "Testcase used to update the footertext")
 	public void verifyTheUserIsAbleToUpdateTheFooterText() throws IOException {
@@ -20,20 +25,20 @@ public class ManageFooterTextTest extends Base {
 		String phonevalue = ExcelUtility.readIntegerData(1, 2, "FooterText");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(username);
-		loginpage.enterPassword(password);
-		loginpage.submitClick();
+		loginpage.enterUserName(username).enterPassword(password);
+	//	loginpage.enterPassword(password);
+		homepage=loginpage.submitClick();
 
-		ManageFooterTextPage ManageFooter = new ManageFooterTextPage(driver);
-		ManageFooter.manageFooterPageClick();
-		ManageFooter.actionClick();
-		ManageFooter.addressClick(addressvalue);
-		ManageFooter.emailClick(emailvalue);
-		ManageFooter.phoneClick(phonevalue);
-		ManageFooter.updateClick();
+	//	ManageFooterTextPage ManageFooter = new ManageFooterTextPage(driver);
+		managefootertextpage=homepage.manageFooterPageClick();
+		managefootertextpage.actionClick();
+		managefootertextpage.addressClick(addressvalue);
+		managefootertextpage.emailClick(emailvalue);
+		managefootertextpage.phoneClick(phonevalue);
+		managefootertextpage.updateClick();
 
-		Boolean value = ManageFooter.isAlertDisplayed();
-		Assert.assertTrue(value, "Alert is not displayed");
+		Boolean value = managefootertextpage.isAlertDisplayed();
+		Assert.assertTrue(value, Constants.MANAGEFOOTERTEXTALERT);
 
 	}
 
@@ -44,16 +49,16 @@ public class ManageFooterTextTest extends Base {
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(username);
-		loginpage.enterPassword(password);
-		loginpage.submitClick();
+		loginpage.enterUserName(username).enterPassword(password);
+		//loginpage.enterPassword(password);
+		homepage=loginpage.submitClick();
 
-		ManageFooterTextPage ManageFooter = new ManageFooterTextPage(driver);
-		ManageFooter.manageFooterPageClick();
-		ManageFooter.actionClick();
+		//ManageFooterTextPage ManageFooter = new ManageFooterTextPage(driver);
+		managefootertextpage=homepage.manageFooterPageClick();
+		managefootertextpage.actionClick();
 
-		boolean value = ManageFooter.isUpdateButtonDisplayed();
-		Assert.assertTrue(value, "Update button is not displayed");
+		boolean value = managefootertextpage.isUpdateButtonDisplayed();
+		Assert.assertTrue(value, Constants.MANAGEFOOTERTEXTALERT1);
 
 	}
 

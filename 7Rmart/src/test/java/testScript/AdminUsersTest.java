@@ -6,12 +6,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Pages.AdminUsersPage;
+import Pages.HomePage;
 import Pages.LoginPage;
 import constants.Constants;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
+import utilities.WaitUtility;
 
 public class AdminUsersTest extends Base{
+	
+	HomePage homepage;
+	AdminUsersPage adminuserpage;
 	
 	@Test(retryAnalyzer = retry.Retry.class, description = "Testcase used to add admin users")
 	public void verifyTheUserIsAbleToCreateAAdminUser() throws IOException {
@@ -19,28 +24,27 @@ public class AdminUsersTest extends Base{
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 
-		// String usernamevalue = ExcelUtilities.readStringData(1, 0, "AdminUser");
-		// String passwordvalue = ExcelUtilities.readStringData(1, 1, "AdminUser");
+	//	 String usernamevalue = ExcelUtility.readStringData(1, 0, "AdminUser");
+	//	 String passwordvalue = ExcelUtility.readStringData(1, 1, "AdminUser");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(username);
-		loginpage.enterPassword(password);
-		loginpage.submitClick();
+		loginpage.enterUserName(username).enterPassword(password);
+		homepage=loginpage.submitClick();
 
-		AdminUsersPage adminuser = new AdminUsersPage(driver);
-		adminuser.adminUserClick();
-		adminuser.newClick();
-
+		//AdminUsersPage adminuser = new AdminUsersPage(driver);
+		adminuserpage = homepage.adminUserClick();
+		adminuserpage.newClick();
+		
 		FakerUtility fakerutility = new FakerUtility();
 		String admin = fakerutility.generateName();
 		String adminpassword = fakerutility.generatePassword();
 
-		adminuser.userNameClick(admin);
-		adminuser.passWordClick(adminpassword);
-		adminuser.selectClick();
-		adminuser.saveClick();
+		adminuserpage.userNameClick(admin);
+		adminuserpage.passWordClick(adminpassword);
+		adminuserpage.selectClick();
+		adminuserpage.saveClick();
 
-		boolean isalertdisplayed = adminuser.isAlertDisplayed();
+		boolean isalertdisplayed = adminuserpage.isAlertDisplayed();
 		Assert.assertTrue(isalertdisplayed, Constants.ALERTMESSAGEADMIN);
 
 	}
@@ -52,16 +56,15 @@ public class AdminUsersTest extends Base{
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(username);
-		loginpage.enterPassword(password);
-		loginpage.submitClick();
+		loginpage.enterUserName(username).enterPassword(password);
+		homepage=loginpage.submitClick();
 
-		AdminUsersPage adminuser = new AdminUsersPage(driver);
-		adminuser.adminUserClick();
-		adminuser.deleteClick();
+	//AdminUsersPage adminuser = new AdminUsersPage(driver);
+		adminuserpage=homepage.adminUserClick();
+		adminuserpage.deleteClick();
 
-		boolean alertdisplayed = adminuser.isAlertDisplayeed();
-		Assert.assertTrue(alertdisplayed, "Alert is not displayed");
+		boolean alertdisplayed = adminuserpage.isAlertDisplayeed();
+		Assert.assertTrue(alertdisplayed, Constants.ALERTMESSAGEADMINUSER);
 
 	}
 

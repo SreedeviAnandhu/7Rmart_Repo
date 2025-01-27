@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Pages.LoginPage;
+import constants.Constants;
 import utilities.ExcelUtility;
 
 
@@ -35,7 +36,7 @@ public class LoginTest extends Base{
 		loginpage.submitClick();
 
 		boolean isHomePageLoded = loginpage.isDashBoardDisplayed();
-		Assert.assertTrue(isHomePageLoded);
+		Assert.assertTrue(isHomePageLoded,Constants.LOGINTESTALERT);
 
 	}
 
@@ -54,7 +55,7 @@ public class LoginTest extends Base{
 		loginpage.submitClick();
 
 		boolean isalertdisplayed = loginpage.isAlertDisplayed();
-		Assert.assertTrue(isalertdisplayed);
+		Assert.assertTrue(isalertdisplayed, Constants.LOGINTESTALERT1);
 
 	}
 
@@ -72,7 +73,7 @@ public class LoginTest extends Base{
 		loginpage.submitClick();
 
 		boolean isalertdisplayedd = loginpage.isAlertDisplayed();
-		Assert.assertTrue(isalertdisplayedd);
+		Assert.assertTrue(isalertdisplayedd, Constants.LOGINTESTALERT2);
 
 	}
 
@@ -90,6 +91,6 @@ public class LoginTest extends Base{
 		loginpage.submitClick();
 
 		boolean isalertdisplayeded = loginpage.isAlertDisplayed();
-		Assert.assertTrue(isalertdisplayeded);
+		Assert.assertTrue(isalertdisplayeded,Constants.LOGINTESTALERT3);
 	}
 }

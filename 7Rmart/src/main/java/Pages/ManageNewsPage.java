@@ -16,8 +16,7 @@ public class ManageNewsPage {
 
 	// @FindBy(xpath="//input[@type='text']")private WebElement webelementname;
 
-	@FindBy(xpath = "//p[text()='Manage News']")
-	private WebElement managenewsclick;
+	
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newclick;
 	@FindBy(xpath = "//textarea[@placeholder='Enter the news']")
@@ -27,20 +26,20 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//i[@class='icon fas fa-check']")
 	private WebElement isalertdisplayed;
 
-	public void manageNewsClick() {
-		managenewsclick.click();
-	}
-
-	public void newClick() {
+	
+	public ManageNewsPage newClick() {
 		newclick.click();
+		return this;
 	}
 
-	public void enterNews(String newsvalue) {
+	public ManageNewsPage enterNews(String newsvalue) {
 		enternews.sendKeys(newsvalue);
+		return this;
 	}
 
-	public void saveClick() {
+	public ManageNewsPage saveClick() {
 		saveclick.click();
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {

@@ -27,15 +27,17 @@ public class LoginPage {
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 	private WebElement alert;
 
-	public void enterUserName(String username) {
+	public LoginPage enterUserName(String username) {
 		name.sendKeys(username);
+		return this;
 	}
 
-	public void enterPassword(String password) {
+	public LoginPage enterPassword(String password) {
 		pass.sendKeys(password);
+		return this;
 	}
 
-	public void submitClick() {
+	public HomePage submitClick() {
 		submit.click();
 		// WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
 		// wait.until(ExpectedConditions.elementToBeClickable(submit));
@@ -43,6 +45,7 @@ public class LoginPage {
 		// wait.waitForElementToBeClickable(driver, submit );
 		// PageUtility page = new PageUtility();
 		// page.javaSriptClick(driver, submit);
+		return new HomePage(driver);
 	}
 
 	public boolean isDashBoardDisplayed() {

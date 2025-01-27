@@ -6,41 +6,45 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.SubCategoryPage;
+import constants.Constants;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
-public class SubCategoryTest extends Base{
+public class SubCategoryTest extends Base {
+
+	HomePage homepage;
+	SubCategoryPage subcategorypage;
 	
 	@Test
 	public void verifyTheUserIsAbleToAddSubCategory() throws IOException, AWTException {
 
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
-//	String namevalue = ExcelUtilities.readStringData(1, 0, "SubCategory");
+    //	String namevalue = ExcelUtility.readStringData(1, 0, "SubCategory");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(username);
-		loginpage.enterPassword(password);
-		loginpage.submitClick();
+		loginpage.enterUserName(username).enterPassword(password);
+	//	loginpage.enterPassword(password);
+		homepage=loginpage.submitClick();
 
-		SubCategoryPage subcategory = new SubCategoryPage(driver);
-		subcategory.SubCategoryClick();
-		subcategory.newClick();
-		subcategory.categorySelect();
+	//	SubCategoryPage subcategory = new SubCategoryPage(driver);
+		subcategorypage=homepage.SubCategoryClick();
+		subcategorypage.newClick();
+		subcategorypage.categorySelect();
 
 		FakerUtility fakerutility = new FakerUtility();
 		String namevalue = fakerutility.generateName();
 
-		subcategory.SubCategoryType(namevalue);
-		subcategory.imageFileSelect();
-		subcategory.saveClick();
+		subcategorypage.SubCategoryType(namevalue);
+		subcategorypage.imageFileSelect();
+		subcategorypage.saveClick();
 
-		boolean value = subcategory.isAlertDisplayed();
-		Assert.assertTrue(value, "Alert is not displayed");
+		boolean value = subcategorypage.isAlertDisplayed();
+		Assert.assertTrue(value, Constants.SUBCATEGORYALERT);
 
 	}
-
 
 }

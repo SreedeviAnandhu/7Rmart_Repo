@@ -29,12 +29,13 @@ public class ScreenShotUtility {
 		File finalDestination = new File(destination);
 		FileHandler.copy(screenShot, finalDestination);
 	}
+	
 	// base classil call chyunnu
 	// driver um pass
-	// get screenshotas enn parayunna method //take scrrenshot enn parayuna
+	// get screenshotas enn parayunna method //take scrrenshot enn parayuna interface
 	// interface inta akathulla method ann
-	// browserinta current situaton screenshot edukan ann screenshotutility use
-	// chyunnath
+	// browserinta current situaton screenshot edukan ann screenshotutility use chyunnath
 
 }
+
 

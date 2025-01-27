@@ -17,8 +17,7 @@ public class ManageContactPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact']//following::i[@class='fas fa-arrow-circle-right'])[5]")
-	private WebElement managecontactclick;
+	
 	@FindBy(xpath = "//i[@class='fas fa-edit']")
 	private WebElement actionclick;
 	@FindBy(xpath = "//input[@id='phone']")
@@ -39,40 +38,45 @@ public class ManageContactPage {
 	@FindBy(xpath = "//button[@class='btn btn-block-sm btn-info']")
 	private WebElement isupdatebuttondisplayed;
 
-	public void manageContactClick() {
-		managecontactclick.click();
-	}
+	
 
-	public void actionClick() {
+	public ManageContactPage actionClick() {
 		actionclick.click();
+		return this;
 	}
 
-	public void phoneClick(String phonevalue) {
+	public ManageContactPage phoneClick(String phonevalue) {
 		phoneclick.sendKeys(phonevalue);
+		return this;
 	}
 
-	public void emailClick(String emailvalue) {
+	public ManageContactPage emailClick(String emailvalue) {
 		emailclick.sendKeys(emailvalue);
+		return this;
 	}
 
-	public void adressClick(String addressvalue) {
+	public ManageContactPage adressClick(String addressvalue) {
 		addressclick.sendKeys(addressvalue);
+		return this;
 	}
 
-	public void deliveryTimeClick(String deliverytimevalue) {
+	public ManageContactPage deliveryTimeClick(String deliverytimevalue) {
 		deliverytimeclick.sendKeys(deliverytimevalue);
+		return this;
 	}
 
-	public void deliveryChargeClick(String deliveryChargevalue) {
+	public ManageContactPage deliveryChargeClick(String deliveryChargevalue) {
 		deliverychargeclick.sendKeys(deliveryChargevalue);
+		return this;
 	}
 
-	public void updateClick() {
+	public ManageContactPage updateClick() {
 		// updateclick.click();
 		PageUtility page = new PageUtility();
 		page.javaSriptClick(driver, updateclick);
 		// WaitUtility wait = new WaitUtility();
 		// wait.waitForElementToBeClickable(driver, updateclick);
+		return this;
 	}
 
 	public boolean isAlertdisplayed() {

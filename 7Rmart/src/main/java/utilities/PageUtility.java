@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class PageUtility {
 	
-	public void javaSriptClick(WebDriver driver, WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+	public void javaSriptClick(WebDriver driver, WebElement element) { // page utlityk obj create chythitt obj.method ine call chyuka
+		JavascriptExecutor js = (JavascriptExecutor) driver;			//used to help page class
 		js.executeScript("arguments[0].click();", element);
 	}
 

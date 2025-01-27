@@ -5,11 +5,16 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.ManageNewsPage;
+import constants.Constants;
 import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base {
+	
+	HomePage homepage;
+	ManageNewsPage managenewspage;
 	
 	@Test(retryAnalyzer = retry.Retry.class, description = "Testcase used to add news", groups = { "regression" })
 	public void verifyTheUserIsAbleToAddTheNews() throws IOException {
@@ -18,18 +23,18 @@ public class ManageNewsTest extends Base {
 		String news = ExcelUtility.readStringData(1, 2, "LoginPage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(username);
-		loginpage.enterPassword(password);
-		loginpage.submitClick();
+		loginpage.enterUserName(username).enterPassword(password);
+	//	loginpage.enterPassword(password);
+		homepage=loginpage.submitClick();
 
-		ManageNewsPage managenews = new ManageNewsPage(driver);
-		managenews.manageNewsClick();
-		managenews.newClick();
-		managenews.enterNews(news);
-		managenews.saveClick();
+	//	ManageNewsPage managenews = new ManageNewsPage(driver);
+		managenewspage=homepage.manageNewsClick();
+		managenewspage.newClick();
+		managenewspage.enterNews(news);
+		managenewspage.saveClick();
 
-		boolean isalertdisplayed = managenews.isAlertDisplayed();
-		Assert.assertTrue(isalertdisplayed, "Alert is not displayed");
+		boolean isalertdisplayed = managenewspage.isAlertDisplayed();
+		Assert.assertTrue(isalertdisplayed, Constants.MANAGENEWSALERT);
 	}
 
 }

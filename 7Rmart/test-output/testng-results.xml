@@ -1,88 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+<testng-results retried="2" ignored="2" total="7" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-21T20:10:22 IST" name="Suite" finished-at="2025-01-21T20:10:22 IST" duration-ms="125">
+  <suite started-at="2025-01-27T12:04:36 IST" name="Suite" finished-at="2025-01-27T12:04:58 IST" duration-ms="21935">
     <groups>
+      <group name="regression">
+        <method signature="ManageContactText.verifyTheUserIsAbleToUpdateTheContactInformation()[pri:0, instance:testScript.ManageContactText@1c9b0314]" name="verifyTheUserIsAbleToUpdateTheContactInformation" class="testScript.ManageContactText"/>
+      </group> <!-- regression -->
     </groups>
-    <test started-at="2025-01-21T20:10:22 IST" name="parameter" finished-at="2025-01-21T20:10:22 IST" duration-ms="125">
-      <class name="testScript.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@45752059]" started-at="2025-01-21T20:10:22 IST" name="initializeBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1737470422855" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'browser' is required by BeforeMethod on method initializeBrowser but has not been marked @Optional or defined
-in C:\Users\91799\git\7Rmart_Repo\7Rmart\Parameter.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'browser' is required by BeforeMethod on method initializeBrowser but has not been marked @Optional or defined
-in C:\Users\91799\git\7Rmart_Repo\7Rmart\Parameter.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:264)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyTheUserIsAbleToLoginWithIncorrectPassword(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginTest@45752059]" started-at="2025-01-21T20:10:22 IST" name="verifyTheUserIsAbleToLoginWithIncorrectPassword" finished-at="2025-01-21T20:10:22 IST" duration-ms="0" status="SKIP">
+    <test started-at="2025-01-27T12:04:36 IST" name="Test" finished-at="2025-01-27T12:04:58 IST" duration-ms="21935">
+      <class name="testScript.ManageContactText">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageContactText@1c9b0314]" started-at="2025-01-27T12:04:47 IST" name="initializeBrowser" finished-at="2025-01-27T12:04:50 IST" duration-ms="3241" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[hello]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
-          <exception class="org.testng.TestNGException">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method retried="true" signature="verifyTheUserIsAbleToUpdateTheContactInformation()[pri:0, instance:testScript.ManageContactText@1c9b0314]" started-at="2025-01-27T12:04:50 IST" name="verifyTheUserIsAbleToUpdateTheContactInformation" description="Testcase used to update the contact information" finished-at="2025-01-27T12:04:51 IST" duration-ms="287" status="SKIP">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[
-Parameter 'browser' is required by BeforeMethod on method initializeBrowser but has not been marked @Optional or defined
-in C:\Users\91799\git\7Rmart_Repo\7Rmart\Parameter.xml]]>
+              <![CDATA[Cannot invoke "org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)" because "utilities.ExcelUtility.sh" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'browser' is required by BeforeMethod on method initializeBrowser but has not been marked @Optional or defined
-in C:\Users\91799\git\7Rmart_Repo\7Rmart\Parameter.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:264)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)" because "utilities.ExcelUtility.sh" is null
+at utilities.ExcelUtility.readIntegerData(ExcelUtility.java:34)
+at testScript.ManageContactText.verifyTheUserIsAbleToUpdateTheContactInformation(ManageContactText.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
@@ -107,22 +60,206 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyTheUserIsAbleToLoginWithIncorrectPassword -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@45752059]" started-at="2025-01-21T20:10:22 IST" name="browserQuit" finished-at="2025-01-21T20:10:22 IST" duration-ms="6" status="PASS">
+        </test-method> <!-- verifyTheUserIsAbleToUpdateTheContactInformation -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.ManageContactText@1c9b0314]" started-at="2025-01-27T12:04:51 IST" name="browserQuit" finished-at="2025-01-27T12:04:51 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyTheUserIsAbleToLoginWithIncorrectPassword status=SKIP method=LoginTest.verifyTheUserIsAbleToLoginWithIncorrectPassword(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginTest@45752059] output={null}]]]>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToUpdateTheContactInformation status=SKIP method=ManageContactText.verifyTheUserIsAbleToUpdateTheContactInformation()[pri:0, instance:testScript.ManageContactText@1c9b0314] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuit -->
-      </class> <!-- testScript.LoginTest -->
-    </test> <!-- parameter -->
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageContactText@1c9b0314]" started-at="2025-01-27T12:04:51 IST" name="initializeBrowser" finished-at="2025-01-27T12:04:54 IST" duration-ms="3282" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method retried="true" signature="verifyTheUserIsAbleToUpdateTheContactInformation()[pri:0, instance:testScript.ManageContactText@1c9b0314]" started-at="2025-01-27T12:04:54 IST" name="verifyTheUserIsAbleToUpdateTheContactInformation" description="Testcase used to update the contact information" finished-at="2025-01-27T12:04:54 IST" duration-ms="199" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)" because "utilities.ExcelUtility.sh" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)" because "utilities.ExcelUtility.sh" is null
+at utilities.ExcelUtility.readIntegerData(ExcelUtility.java:34)
+at testScript.ManageContactText.verifyTheUserIsAbleToUpdateTheContactInformation(ManageContactText.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToUpdateTheContactInformation -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.ManageContactText@1c9b0314]" started-at="2025-01-27T12:04:54 IST" name="browserQuit" finished-at="2025-01-27T12:04:54 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToUpdateTheContactInformation status=SKIP method=ManageContactText.verifyTheUserIsAbleToUpdateTheContactInformation()[pri:0, instance:testScript.ManageContactText@1c9b0314] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageContactText@1c9b0314]" started-at="2025-01-27T12:04:54 IST" name="initializeBrowser" finished-at="2025-01-27T12:04:57 IST" duration-ms="3190" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="verifyTheUserIsAbleToUpdateTheContactInformation()[pri:0, instance:testScript.ManageContactText@1c9b0314]" started-at="2025-01-27T12:04:57 IST" name="verifyTheUserIsAbleToUpdateTheContactInformation" description="Testcase used to update the contact information" finished-at="2025-01-27T12:04:58 IST" duration-ms="294" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)" because "utilities.ExcelUtility.sh" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)" because "utilities.ExcelUtility.sh" is null
+at utilities.ExcelUtility.readIntegerData(ExcelUtility.java:34)
+at testScript.ManageContactText.verifyTheUserIsAbleToUpdateTheContactInformation(ManageContactText.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToUpdateTheContactInformation -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.ManageContactText@1c9b0314]" started-at="2025-01-27T12:04:58 IST" name="browserQuit" finished-at="2025-01-27T12:04:58 IST" duration-ms="198" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToUpdateTheContactInformation status=FAILURE method=ManageContactText.verifyTheUserIsAbleToUpdateTheContactInformation()[pri:0, instance:testScript.ManageContactText@1c9b0314] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+      </class> <!-- testScript.ManageContactText -->
+      <class name="testScript.AdminUsersTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.AdminUsersTest@1500b2f3]" started-at="2025-01-27T12:04:36 IST" name="initializeBrowser" finished-at="2025-01-27T12:04:39 IST" duration-ms="3081" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="verifyTheUserIsAbleToCreateAAdminUser()[pri:0, instance:testScript.AdminUsersTest@1500b2f3]" started-at="2025-01-27T12:04:39 IST" name="verifyTheUserIsAbleToCreateAAdminUser" description="Testcase used to add admin users" finished-at="2025-01-27T12:04:43 IST" duration-ms="3937" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToCreateAAdminUser -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.AdminUsersTest@1500b2f3]" started-at="2025-01-27T12:04:43 IST" name="browserQuit" finished-at="2025-01-27T12:04:43 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToCreateAAdminUser status=SUCCESS method=AdminUsersTest.verifyTheUserIsAbleToCreateAAdminUser()[pri:0, instance:testScript.AdminUsersTest@1500b2f3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.AdminUsersTest@1500b2f3]" started-at="2025-01-27T12:04:43 IST" name="initializeBrowser" finished-at="2025-01-27T12:04:45 IST" duration-ms="2242" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="verifyTheUserIsAbleToDeleteTheAdminUserDetails()[pri:0, instance:testScript.AdminUsersTest@1500b2f3]" started-at="2025-01-27T12:04:45 IST" name="verifyTheUserIsAbleToDeleteTheAdminUserDetails" description="Testcase used to delete admin details" finished-at="2025-01-27T12:04:47 IST" duration-ms="1793" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToDeleteTheAdminUserDetails -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.AdminUsersTest@1500b2f3]" started-at="2025-01-27T12:04:47 IST" name="browserQuit" finished-at="2025-01-27T12:04:47 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheUserIsAbleToDeleteTheAdminUserDetails status=SUCCESS method=AdminUsersTest.verifyTheUserIsAbleToDeleteTheAdminUserDetails()[pri:0, instance:testScript.AdminUsersTest@1500b2f3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+      </class> <!-- testScript.AdminUsersTest -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

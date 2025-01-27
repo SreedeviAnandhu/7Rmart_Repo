@@ -15,22 +15,18 @@ public class ManageProductPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//p[text()='Manage Product']")
-	private WebElement manageproductclick;
+
 	@FindBy(xpath = "//tbody//tr[1]//td[9]//a[2]")
 	private WebElement deleteclick;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement isalertdisplayed;
 
-	public void manageProductClick() {
 
-		manageproductclick.click();
-	}
-
-	public void deleteClick() {
+	public ManageProductPage deleteClick() {
 
 		deleteclick.click();
 		driver.switchTo().alert().accept();
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {

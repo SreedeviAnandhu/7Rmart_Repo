@@ -21,8 +21,7 @@ public class SubCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "(//i[@class='fas fa-arrow-circle-right']//parent::a[@class='small-box-footer'])[4]")
-	private WebElement subcategoryclick;
+	
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newclick;
 	@FindBy(xpath = "//select[@id='cat_id']")
@@ -36,40 +35,41 @@ public class SubCategoryPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement isalertdisplayed;
 
-	public void SubCategoryClick() {
-
-		subcategoryclick.click();
-	}
-
-	public void newClick() {
+	
+	public SubCategoryPage newClick() {
 
 		newclick.click();
+		return this;
 	}
 
-	public void categorySelect() {
+	public SubCategoryPage categorySelect() {
 
 		PageUtility page = new PageUtility();
 		page.selectByVisibleText(categoryselect, "Fresh_fruits");
+		return this;
 	}
 
-	public void SubCategoryType(String namevalue) {
+	public SubCategoryPage SubCategoryType(String namevalue) {
 
 		Subcategorytype.sendKeys(namevalue);
+		return this;
 	}
 
-	public void imageFileSelect() throws AWTException {
+	public SubCategoryPage imageFileSelect() throws AWTException {
 
 		PageUtility page = new PageUtility();
 		page.javaSriptClick(driver, imagefileselect);
 
 		FileUploadUtility fileupload = new FileUploadUtility();
 		fileupload.fileuploadUsingRobertClass(imagefileselect, Constants.APPLEIMAGE);
+		return this;
 
 	}
 
-	public void saveClick() {
+	public SubCategoryPage saveClick() {
 
 		saveclick.click();
+		return this;
 	}
 
 	public Boolean isAlertDisplayed() {

@@ -8,8 +8,10 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.WebElement;
 
-public class FileUploadUtility {
+public class FileUploadUtility
 	
+	{
+
 	public void fileUploadUsingSendKeys(WebElement element, String path) {
 		element.sendKeys(path);
 
@@ -33,3 +35,5 @@ public class FileUploadUtility {
 	}
 
 }
+// 2 methods 
+// so we can use any of these methods according to the usage in this file upload utiliy class

@@ -15,8 +15,7 @@ public class ManageFooterTextPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-footertext']")
-	private WebElement managefooterpageclick;
+	
 	@FindBy(xpath = "//tbody//tr[1]//td[4]//a[1]")
 	private WebElement actionclick;
 	@FindBy(xpath = "//textarea[@id='content']")
@@ -32,33 +31,34 @@ public class ManageFooterTextPage {
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement isupdatebuttondisplayed;
 
-	public void manageFooterPageClick() {
 
-		managefooterpageclick.click();
-	}
-
-	public void actionClick() {
+	public ManageFooterTextPage actionClick() {
 		actionclick.click();
+		return this;
 	}
 
-	public void addressClick(String addressvalue) {
+	public ManageFooterTextPage addressClick(String addressvalue) {
 
 		addressclick.sendKeys(addressvalue);
+		return this;
 	}
 
-	public void emailClick(String emailvalue) {
+	public ManageFooterTextPage emailClick(String emailvalue) {
 
 		emailclick.sendKeys(emailvalue);
+		return this;
 	}
 
-	public void phoneClick(String phonevalue) {
+	public ManageFooterTextPage phoneClick(String phonevalue) {
 
 		phoneclick.sendKeys(phonevalue);
+		return this;
 	}
 
-	public void updateClick() {
+	public ManageFooterTextPage updateClick() {
 
 		updateclick.click();
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {

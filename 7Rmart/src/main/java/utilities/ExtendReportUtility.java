@@ -18,3 +18,6 @@ public class ExtendReportUtility {
 	}
 
 }
+// used to generate html extension report
+//add an avenStack dependency in the pom.xml
+//createExtentReports method will return a customized report
